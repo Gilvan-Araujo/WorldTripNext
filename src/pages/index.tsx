@@ -17,11 +17,11 @@ export default function Home() {
       </Center>
 
       <Text
-        px="2.4375rem"
-        py="1.25rem"
-        fontWeight="500"
-        fontSize="20px"
-        lineHeight="30px"
+        mx={["2.4375rem", "18.75rem"]}
+        my={["1.25rem", "3.25rem"]}
+        fontWeight={500}
+        fontSize={["20px", "36px"]}
+        lineHeight={["30px", "54px"]}
         color="gray.600"
         textAlign="center"
       >
