@@ -9,7 +9,7 @@ export function Banner() {
     return (
         <Box
             bgImage="url('/images/banner.jpg')"
-            bgPosition="top"
+            bgPosition={["100 20%", "100 20%", "100 30%"]}
             bgSize="cover"
             objectFit="contain"
             bgRepeat="no-repeat"

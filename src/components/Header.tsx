@@ -1,18 +1,53 @@
-import { Box, Flex, Image } from '@chakra-ui/react'
+import Link from 'next/link';
 
+import { Flex, Grid, Icon, Image } from '@chakra-ui/react';
+import { useRouter } from 'next/dist/client/router';
+import { RiArrowLeftSLine } from 'react-icons/ri'
 export function Header() {
+    const { asPath } = useRouter()
+    const notHomePage = asPath !== '/'
+
     return (
         <Flex
-            w={'full'}
-            h={[12, 24]}
+            bg="gray.100"
+            w="100%"
+            as="header"
+            mx="auto"
+            px="1rem"
+            h={["50px", "100px"]}
+            align="center"
             justify="center"
-            alignItems="center"
         >
-            <Image
-                src="/logo.svg"
-                h={["1.25rem", "2.875rem"]}
-                w={["5rem", "11.5rem"]}
-            />
+            <Grid
+                h="100%"
+                mx="auto"
+                w="100%"
+                maxW="1160px"
+                alignItems="center"
+                templateColumns="repeat(3, 1fr)"
+                justifyContent="center"
+            >
+                {notHomePage && (
+                    <Link href="/">
+                        <a>
+                            <Icon
+                                as={RiArrowLeftSLine}
+                                fontSize={[20, 40]}
+                                justifySelf="start"
+                            />
+                        </a>
+                    </Link>
+                )}
+
+                <Image
+                    w={["81px", "184px"]}
+                    src="/logo.svg"
+                    alt="Logomarca"
+                    justifySelf="center"
+                    gridColumn="2"
+                >
+                </Image>
+            </Grid>
         </Flex>
     )
 }

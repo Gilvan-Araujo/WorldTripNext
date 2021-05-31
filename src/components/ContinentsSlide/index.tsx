@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Center, Flex } from '@chakra-ui/react';
 
 import { ContinentImage } from './ContinentImage';
+import Link from 'next/link';
 
 SwiperCore.use([Autoplay, Pagination, Navigation]);
 
@@ -26,12 +27,17 @@ export function ContinentsSlide() {
                         "disableOnInteraction": false
                     }}
                 >
+
                     <SwiperSlide>
-                        <ContinentImage
-                            name="Europa"
-                            description="O continente mais antigo"
-                            image="europe"
-                        />
+                        <Link href="/continent/europe">
+                            <a>
+                                <ContinentImage
+                                    name="Europa"
+                                    description="O continente mais antigo"
+                                    image="europe"
+                                />
+                            </a>
+                        </Link>
                     </SwiperSlide>
                     <SwiperSlide>
                         <ContinentImage
